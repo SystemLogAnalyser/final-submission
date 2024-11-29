@@ -15,7 +15,7 @@ geometry: margin=3cm
 
 ### Supervisor
 
-- Sai Anirudh Karre - saianirudh.karre@research.iiit.ac.in
+- Dr. Sai Anirudh Karre - saianirudh.karre@research.iiit.ac.in
 
 
 ## 1. Project Overview
@@ -86,6 +86,7 @@ performance, even in large-scale environments.
 - This tool assumes that the log files are primarily from Linux based systems
 - This tool assumes the log files to be in a particular format, specifically:<BR>
 `timestamp hostname process: message`
+- For local file analysis, this tool assumes that it is being on a linux based distribution with systemd init system
 - User of this tool as some experience with TUI applications
 - User has basic technical knowledge of system administration
 
