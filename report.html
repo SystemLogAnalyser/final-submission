@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>progress-report</title>
+  <title>report</title>
   <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -145,7 +145,9 @@ without needing to know complex commands.</li>
 <li>Golang as the programming language of choice</li>
 <li>BubbleTea as the TUI framework</li>
 <li>LipGloss as the styling framework</li>
-<li>TODO: sdjournal to monitor local logs</li>
+<li>Bubbles for UI Components</li>
+<li>ntcharts for graphs and charts</li>
+<li>go-systemd to monitor local system logs</li>
 </ul>
 <h3 id="inputs">2.3 Inputs</h3>
 <ul>
@@ -176,7 +178,8 @@ specifically:<BR> <code>timestamp hostname process: message</code></li>
 <h2 id="control-flow-data-flow">3. Control Flow / Data Flow</h2>
 <ol type="1">
 <li>Log File Reading: The system will scan and load the provided log
-files. TODO: add about local files in case of no input</li>
+files. In case no log files are provided local system logs are
+processed</li>
 <li>Log Parsing &amp; Filtering: Parsing logs to extract relevant
 details such as timestamps, process name, log levels and events.</li>
 <li>Log Categorization: Group logs into categories such as errors,
@@ -260,8 +263,8 @@ testing.</p>
 <ul>
 <li>The application can now take multiple files as command line argument
 and proceeses them as a single file</li>
-<li>TODO: in case of no command line arguments, the application defaults
-to the local logs of the system</li>
+<li>In case of no command line arguments, the application defaults to
+the local logs of the system</li>
 </ul></li>
 <li><strong>Improvements to Log Categorization</strong>
 <ul>
@@ -274,7 +277,11 @@ categorisation heuristics</li>
 <ul>
 <li>The TUI was refined so as to look more polished and easy to use</li>
 <li>Visualisations were added to facilitate analysis</li>
-<li>TODO: added better filtering interface</li>
+</ul></li>
+<li><strong>Added Visualisations</strong>
+<ul>
+<li>Visualisations such as bar charts were added for easy
+interpretation</li>
 </ul></li>
 <li><strong>General Improvements</strong>
 <ul>
@@ -315,8 +322,8 @@ ensuring efficiency, scalability, and user-friendliness.</p>
 <tbody>
 <tr class="odd">
 <td>Ayush Rawal</td>
-<td>TUI Implementation, Integration of various modules, Local log
-analysis</td>
+<td>TUI Implementation, Integration of categorizing, TUI and
+visualization logic and Local log analysis</td>
 </tr>
 <tr class="even">
 <td>Niket Mittal</td>

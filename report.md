@@ -40,15 +40,24 @@ performance, even in large-scale environments.
 
 ### 1.1. Use Cases
 
-1. Log Parsing and Filtering: Parse system logs and filter events based on user-defined criteria, such as date range, severity (error, warning, information), or specific services (e.g., SSH, kernel, authentication).
-2. Log Categorization: Automatically categorize logs into predefined categories (errors, warnings, information) for easier analysis.
-3. Event Frequency Analysis: Track the frequency of certain events (e.g., failed logins, service crashes, network errors) over time to identify recurring issues.
-4. Log Trend Visualization: Provide graphical representations (using ASCII charts) to visualize trends in system logs, such as spikes in errors or warnings during certain periods.
-5. Aggregate Log Data Over Time: Summarize log data over hourly, daily, or weekly timeframes to provide high-level insights into system performance.
-6. Error and Warning Monitoring: Continuously monitor logs for critical errors and warnings, notifying users of potential system issues in real-time.
-7. Security Incident Detection: Identify and highlight potential security issues such as unauthorized access attempts or suspicious activity within the logs.
-8. Service Health Monitoring: Analyze logs from key services (e.g., web server, database server) to assess overall system health and detect anomalies.
-9. TUI Interface for Non-Technical Users: Provide a user-friendly TUI interface that allows users, including non-technical staff, to interact with logs, view summaries, and navigate through different sections without needing to know complex commands.
+1. Log Parsing and Filtering: Parse system logs and filter events based on
+   user-defined criteria, such as date range, severity (error, warning, information), or specific services (e.g., SSH, kernel, authentication).
+2. Log Categorization: Automatically categorize logs into predefined categories
+   (errors, warnings, information) for easier analysis.
+3. Event Frequency Analysis: Track the frequency of certain events (e.g.,
+   failed logins, service crashes, network errors) over time to identify recurring issues.
+4. Log Trend Visualization: Provide graphical representations (using ASCII
+   charts) to visualize trends in system logs, such as spikes in errors or warnings during certain periods.
+5. Aggregate Log Data Over Time: Summarize log data over hourly, daily, or
+   weekly timeframes to provide high-level insights into system performance.
+6. Error and Warning Monitoring: Continuously monitor logs for critical errors
+   and warnings, notifying users of potential system issues in real-time.
+7. Security Incident Detection: Identify and highlight potential security
+   issues such as unauthorized access attempts or suspicious activity within the logs.
+8. Service Health Monitoring: Analyze logs from key services (e.g., web server,
+   database server) to assess overall system health and detect anomalies.
+9. TUI Interface for Non-Technical Users: Provide a user-friendly TUI interface
+   that allows users, including non-technical staff, to interact with logs, view summaries, and navigate through different sections without needing to know complex commands.
 
 ## 2. Implementation
 
@@ -56,7 +65,9 @@ performance, even in large-scale environments.
 - Golang as the programming language of choice
 - BubbleTea as the TUI framework
 - LipGloss as the styling framework
-- TODO: sdjournal to monitor local logs
+- Bubbles for UI Components
+- ntcharts for graphs and charts
+- go-systemd to monitor local system logs
 
 ### 2.3 Inputs
 
@@ -80,7 +91,7 @@ performance, even in large-scale environments.
 
 ## 3. Control Flow / Data Flow
 
-1. Log File Reading: The system will scan and load the provided log files. TODO: add about local files in case of no input
+1. Log File Reading: The system will scan and load the provided log files. In case no log files are provided local system logs are processed
 2. Log Parsing & Filtering: Parsing logs to extract relevant details such as timestamps, process name, log levels and events.
 3. Log Categorization: Group logs into categories such as errors, warnings, and information.
 4. Interactive CLI: A command-line interface for interacting with the system, displaying analysis through graphs, statistics, and summaries.
@@ -161,22 +172,22 @@ features to the interface and conducting thorough testing.
 
 - **Improvements to application usage**
     - The application can now take multiple files as command line argument and proceeses them as a single file
-    - TODO: in case of no command line arguments, the application defaults to the local logs of the system
+    - In case of no command line arguments, the application defaults to the local logs of the system
 
 - **Improvements to Log Categorization**
     - More robust categorsing logic was devised and implemented
-    - The system was refactored so as to allow easy modification of the
-    categorisation heuristics
+    - The system was refactored so as to allow easy modification of the categorisation heuristics
     - Process information was extracted to provide better analysis
 
 - **Improvements to Terminal User Interface**
     - The TUI was refined so as to look more polished and easy to use
     - Visualisations were added to facilitate analysis
-    - TODO: added better filtering interface
+
+- **Added Visualisations**
+    - Visualisations such as bar charts were added for easy interpretation
 
 - **General Improvements**
-    - The code of the application was refactored so as to improve readability and
-    maintainability
+    - The code of the application was refactored so as to improve readability and maintainability
     - The code was divided into modules to separate application logic
     - The application was thoroughly tested and encountered bugs were removed
 
@@ -199,10 +210,10 @@ user-friendliness.
 <br><br>
 <br><br>
 
-| Team Member | Contributions |
-|-------------|---------------|
-| Ayush Rawal | TUI Implementation, Integration of various modules, Local log analysis |
-| Niket Mittal| System Architecture, Log Parsing and Categorisation |
-| Piyush Priy | Requirement Gathering, Log Categorisation Heuristics and Testing |
-| Prakhar Kesari | TUI Design, Bug fixing, UX improvements and Visualisation |
-| Akarsh Saxena | Testing, Requirement Gathering, Documentation |
+| Team Member    | Contributions                                                                                       |
+|-------------   |---------------                                                                                      |
+| Ayush Rawal    | TUI Implementation, Integration of categorizing, TUI and visualization logic and Local log analysis |
+| Niket Mittal   | System Architecture, Log Parsing and Categorisation                                                 |
+| Piyush Priy    | Requirement Gathering, Log Categorisation Heuristics and Testing                                    |
+| Prakhar Kesari | TUI Design, Bug fixing, UX improvements and Visualisation                                           |
+| Akarsh Saxena  | Testing, Requirement Gathering, Documentation                                                       |
